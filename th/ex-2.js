@@ -14,7 +14,19 @@ const studentsInfo = [
   { firstname: "James", lastname: "Johnson", score: 78 },
   { firstname: "Emily", lastname: "Davis", score: 88 },
 ];
-
+function sortedByScore(studentsInfo) {
+  let sum = studentsInfo.length
+  for (let i = 0; i < sum - 1; i++) {
+    for (let j = 0; j < sum - 1 - i; j++) {
+      if (studentsInfo[j].score > studentsInfo[j + 1].score) {
+        let total = studentsInfo[j]
+        studentsInfo[j] = studentsInfo[j + 1]
+        studentsInfo[j + 1] = total
+      }
+  }
+  
+}return studentsInfo
+}
 const result = sortedByScore(studentsInfo);
 console.log(result);
 /*
